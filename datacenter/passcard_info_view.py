@@ -10,9 +10,8 @@ def format_duration(duration):
 
 def passcard_info_view(request, passcode):
     passcard = Passcard.objects.filter(passcode=passcode)
-    visits = Visit.objects.filter(passcard=passcard)
     this_passcard_visits = list()
-    for visit in visits:
+    for visit in Visit.objects.filter(passcard=passcard):
         this_passcard_visits.append(
             {
                 'entered_at': visit.entered_at,

@@ -5,9 +5,8 @@ from passcard_info_view import format_duration
 
 
 def storage_information_view(request):
-    current_visits = Visit.objects.filter(leaved_at=None)
     non_closed_visits = list()
-    for visit in current_visits:
+    for visit in Visit.objects.filter(leaved_at=None):
         non_closed_visits.append(
             {
                 'who_entered': visit.passcard.owner_name,
@@ -17,6 +16,6 @@ def storage_information_view(request):
             }
         )
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)
