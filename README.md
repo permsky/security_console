@@ -15,6 +15,16 @@
     ```
     pip install -r requirements.txt
     ```
+- Создайте файл .env в корне проекта. Сохраните настройки django и базы данных в следующих переменных окружения:
+  ```
+  DJANGO_SECRET_KEY=django_secret_key
+  DB_HOST=database_hostname
+  DB_PORT=database_port
+  DB_NAME=database_name
+  DB_USER=database_user
+  DB_PASSWORD=database_password
+  DJANGO_DEBUG=True or False
+  ```
 - Введите команду:
 
 ```
