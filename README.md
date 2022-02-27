@@ -19,7 +19,8 @@
   ```
   DJANGO_SECRET_KEY=django_secret_key
   DATABASE_URL=DATABASE://USER:PASSWORD@HOST:PORT/DATABASENAME
-  DJANGO_DEBUG=True or False
+  DJANGO_DEBUG=True или False
+  ALLOWED_HOSTS=localhost, HOST
   ```
 - Введите команду:
 
