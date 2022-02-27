@@ -17,7 +17,7 @@ SECRET_KEY = env.str('DJANGO_SECRET_KEY')
 
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
-ROOT_URLCONF = "project.urls"
+ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = ['*']
 
