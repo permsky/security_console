@@ -1,19 +1,21 @@
+from email.policy import default
 import os
 
-import dj_database_url
-from dotenv import load_dotenv
+import environs
 
 
-load_dotenv()
+env = environs.Env()
+env.read_env()
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+    'default': env.dj_db_url('DATABASE_URL')
+}
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default=None)
+SECRET_KEY = env.str('DJANGO_SECRET_KEY')
 
-DEBUG = os.getenv('DJANGO_DEBUG').lower() == 'true'
+DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 ROOT_URLCONF = "project.urls"
 
